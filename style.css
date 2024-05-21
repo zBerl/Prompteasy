@@ -1,0 +1,383 @@
+/* Reset some default styling */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Original Theme (Default) */
+body.original {
+  background: linear-gradient(135deg, #A3CBE6, #007BFF); /* Gradient background */
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 18px;
+  z-index: 1000; /* Ensure the navbar is always on top */
+}
+
+#header div:last-child {
+  padding-right: 20px; /* Add padding to the right side of the WELCOME text */
+}
+
+#recordingStatus, #timer {
+  position: fixed;
+  top: 50px; /* Below the header */
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+  z-index: 1000; /* Ensure messages are always on top */
+  color: #fff;
+}
+
+#timer {
+  top: 70px; /* Slightly below the recording status */
+}
+
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 100px; /* Add top margin to create space for header and messages */
+}
+
+#teleprompter {
+  width: 60%;
+  height: 70vh;
+  border: 2px solid #333;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Box shadow for depth */
+  background-color: #333; /* Dark background for contrast */
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  line-height: 1.8;
+  text-align: justify;
+  border-radius: 10px; /* Rounded corners for a modern look */
+}
+
+pre {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow: hidden;
+  color: #fff; /* White text color for visibility */
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Box shadow for depth */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  padding: 10px;
+  background-color: #333; /* Dark background for contrast */
+}
+
+#video {
+  width: 100%; /* Full width for video */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for a modern look */
+}
+
+textarea {
+  font-size: 16px;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color: #444; /* Dark background for contrast */
+  color: #fff; /* White text color */
+  border: 1px solid #555; /* Subtle border for textarea */
+  border-radius: 5px;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.control-button {
+  background-color: #444; /* Darker buttons */
+  color: #fff;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for buttons */
+}
+
+.control-button:hover {
+  background-color: #555;
+}
+
+/* Night Mode */
+body.night {
+  background: linear-gradient(135deg, #2e3b4e 0%, #1c1f26 100%);
+}
+
+body.night #header {
+  background-color: #1c1f26;
+  color: #fff;
+}
+
+body.night #teleprompter {
+  background-color: #1c1f26;
+  color: #fff;
+}
+
+body.night textarea {
+  background-color: #2e3b4e;
+  color: #fff;
+}
+
+body.night button {
+  background-color: #556877;
+}
+
+body.night .control-button {
+  background-color: #2e3b4e;
+}
+
+/* Tetris Mode */
+body.tetris {
+  background: linear-gradient(135deg, #ffcc00 0%, #ff0066 100%);
+}
+
+body.tetris #header {
+  background-color: #333;
+  color: #ffcc00;
+}
+
+body.tetris #teleprompter {
+  background-color: #000;
+  color: #ffcc00;
+}
+
+body.tetris textarea {
+  background-color: #444;
+  color: #ffcc00;
+}
+
+body.tetris button {
+  background-color: #ffcc00;
+  color: #000;
+}
+
+body.tetris .control-button {
+  background-color: #ff0066;
+  color: #000;
+}
+
+/* Fun Mode */
+body.fun {
+  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+}
+
+body.fun #header {
+  background-color: #ff7e5f;
+  color: #fff;
+}
+
+body.fun #teleprompter {
+  background-color: #fff;
+  color: #ff7e5f;
+}
+
+body.fun textarea {
+  background-color: #feb47b;
+  color: #fff;
+}
+
+body.fun button {
+  background-color: #ff7e5f;
+  color: #fff;
+}
+
+body.fun .control-button {
+  background-color: #feb47b;
+  color: #fff;
+}
+
+/* Retro Mode */
+body.retro {
+  background: linear-gradient(135deg, #f7f7f7 0%, #d4af37 100%);
+}
+
+body.retro #header {
+  background-color: #d4af37;
+  color: #000;
+}
+
+body.retro #teleprompter {
+  background-color: #fff;
+  color: #d4af37;
+}
+
+body.retro textarea {
+  background-color: #f7f7f7;
+  color: #000;
+}
+
+body.retro button {
+  background-color: #d4af37;
+  color: #000;
+}
+
+body.retro .control-button {
+  background-color: #d4af37;
+  color: #000;
+}
+
+/* Ocean Mode */
+body.ocean {
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+}
+
+body.ocean #header {
+  background-color: #0072ff;
+  color: #fff;
+}
+
+body.ocean #teleprompter {
+  background-color: #00c6ff;
+  color: #fff;
+}
+
+body.ocean textarea {
+  background-color: #0072ff;
+  color: #fff;
+}
+
+body.ocean button {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+body.ocean .control-button {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* Space Mode */
+body.space {
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+}
+
+body.space #header {
+  background-color: #0f2027;
+  color: #fff;
+}
+
+body.space #teleprompter {
+  background-color: #203a43;
+  color: #fff;
+}
+
+body.space textarea {
+  background-color: #2c5364;
+  color: #fff;
+}
+
+body.space button {
+  background-color: #1e2e38;
+  color: #fff;
+}
+
+body.space .control-button {
+  background-color: #1e2e38;
+  color: #fff;
+}
+
+/* Sega Mode */
+body.sega {
+  background: linear-gradient(135deg, #0083ca 0%, #004ba0 100%);
+}
+
+body.sega #header {
+  background-color: #004ba0;
+  color: #fff;
+}
+
+body.sega #teleprompter {
+  background-color: #004ba0;
+  color: #fff;
+}
+
+body.sega textarea {
+  background-color: #0083ca;
+  color: #fff;
+}
+
+body.sega button {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+body.sega .control-button {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* Atari Mode */
+body.atari {
+  background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+}
+
+body.atari #header {
+  background-color: #b31217;
+  color: #fff;
+}
+
+body.atari #teleprompter {
+  background-color: #b31217;
+  color: #fff;
+}
+
+body.atari textarea {
+  background-color: #e52d27;
+  color: #fff;
+}
+
+body.atari button {
+  background-color: #b31217;
+  color: #fff;
+}
+
+body.atari .control-button {
+  background-color: #b31217;
+  color: #fff;
+}

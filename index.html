@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prompteasy - The Easy to Use Teleprompter</title>
+<link href="./style.css" rel="stylesheet">
+</head>
+<body class="original"> <!-- Set default theme to original -->
+<div id="header">
+  <div>PROMPTEASY <span style="font-size: 12px;">The Easy to Use Teleprompter</span></div>
+  <div>
+    WELCOME
+    <select id="themeSelector" onchange="changeTheme()">
+      <option value="original">Original</option>
+      <option value="day">Day Mode</option>
+      <option value="night">Night Mode</option>
+      <option value="tetris">Tetris Mode</option>
+      <option value="fun">Fun Mode</option>
+      <option value="retro">Retro Mode</option>
+      <option value="ocean">Ocean Mode</option>
+      <option value="space">Space Mode</option>
+      <option value="sega">Sega Mode</option>
+      <option value="atari">Atari Mode</option>
+    </select>
+  </div>
+</div>
+<h4 id="recordingStatus" style="text-align: center; margin-top: 10px;"></h4> <!-- Placeholder for recording status message -->
+<h4 id="timer" style="text-align: center; margin-top: 10px;"></h4> <!-- Placeholder for timer -->
+<div id="wrapper">
+  <div id="teleprompter">
+    <pre id="text">Welcome to your teleprompter! Enter text in the side panel to start.</pre>
+  </div>
+  <div id="sidebar">
+    <video id="video" autoplay muted></video>
+    <textarea id="inputText" rows="10">Welcome to your teleprompter! Enter text in the side panel to start.</textarea>
+    <button onclick="updateText()">Update Text</button>
+  </div>
+</div>
+<div id="controls">
+  <button class="control-button" onclick="setSpeed(0.5)">Slower</button>
+  <button class="control-button" onclick="setSpeed(2)">Play</button>
+  <button class="control-button" onclick="togglePause()">Pause</button>
+  <button class="control-button" onclick="holdScroll()">Hold 5 Sec</button>
+  <button class="control-button" onclick="startRecording()">Start Recording</button>
+  <button class="control-button" onclick="stopRecording()">Stop Recording</button>
+</div>
+<script src="./teleprompter.js"></script>
+</body>
+</html>
